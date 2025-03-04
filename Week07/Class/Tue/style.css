@@ -1,0 +1,28 @@
+  
+  .box {
+    border: 10px black solid;
+    color: red;
+    background-color: pink;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+  }
+  html {
+    background-color: blue;
+  }
+  p {
+    background-color: white;
+    border: 1px black solid;
+    padding-left: 10px;
+
+  }
+  span {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 10px;;
+  }
+  h2 {
+    background-color: green;
+    color: white;
+  }
