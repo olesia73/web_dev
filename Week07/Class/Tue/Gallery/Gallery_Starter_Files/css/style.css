@@ -1,0 +1,25 @@
+  * {
+    background-color: darkgoldenrod;
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 900px;
+    margin: 0 auto;
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .polaroid {
+    width: 25%;
+    min-width: 50px;
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .polaroid img {
+    width: 100%;
+    height: auto;
+    border: 10px solid brown;
+  }

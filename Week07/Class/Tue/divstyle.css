@@ -1,0 +1,14 @@
+.container div {
+    width: 50%;
+    margin: auto;
+    float: left;
+    display: flex;
+  }
+  .container {
+    background-color: aquamarine;
+    color:bisque;
+  }
+.note {
+    font-size: 150%;
+    color: rebeccapurple;
+}
