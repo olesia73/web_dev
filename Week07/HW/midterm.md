@@ -12,6 +12,7 @@ Covered:
 New:
 - adjustability to screen
 - images moving (pretty nav bar)
+- Can there be private sections? To store actual private information such as contact info of work-related people
 
 # Broadway
 Theme: guide to affordable tickets\
