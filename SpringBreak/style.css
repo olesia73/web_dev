@@ -74,13 +74,6 @@ nav a:hover {
 .p6 img:hover {
     opacity: 0;
 }
-.overlay {
-    position: absolute; 
-    top: 10vw; 
-    left: 20vw;
-    opacity: 1;
-    background-color: #008CBA;
-  }
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #604652;
