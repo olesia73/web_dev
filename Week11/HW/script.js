@@ -1,0 +1,1 @@
+let list = ["Kyiv cake", "clouds", "Peter Pan", "princess", "cubes", "Game of Thrones", "flowers", "chess"];
