@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math</title>
+    <style>
+        * {
+            color: #D59A6F;
+            background-color: #77553D;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <p id="list"></p>
+    <p id="math" style="white-space: pre;"></p>
+    <input type="submit" value="Pick drink" id="drink"/>
+    <script>
+        const drinks = ["Whisky", "Whisky Sour", "Amaretto", "Cointreau", "Baileys"];
+        list.textContent = drinks.join(", ");
+        var x = 73;
+        var y = 37;
+        math.textContent += "x = " + x + "\n";
+        math.textContent += "y = " + y + "\n";
+        math.textContent += "x+y = " + (x+y) + "\n";
+        math.textContent += "x*y = " + (x*y) + "\n";
+        math.textContent += "x-y = " + (x-y) + "\n";
+        math.textContent += "x%y = " + (x%y) + "\n";
+        x = 73.37
+        math.textContent += "new x = " + x + "\n";
+        math.textContent += "rounded x = " + Math.round(x) + "\n";
+        math.textContent += "a good random number less than x = " + Math.random() + "\n";
+
+        function randomOne(list) {
+            button.value =  list[Math.floor(list.length*Math.random())];
+        }
+
+        const button = document.getElementById("drink");
+        button.addEventListener("click", function() { randomOne(drinks) });
+    </script>
+</body>
+</html>
