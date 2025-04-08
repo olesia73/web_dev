@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        background-color: #e1ad01;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // Add your code here
+    let myArray = ["armchair detective", "quantum engineer", "pirate"];
+    myArray[0] = "an " + myArray[0] + " than a";
+    myArray[1] += " or a";
+    myArray.unshift("I'd rather be");
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    para1.textContent = `Array: ${ myArray.join(" ") }`;
+
+    section.appendChild(para1);
+  </script>
+
+</html>
