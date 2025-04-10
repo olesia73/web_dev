@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        font-size: 2em;
+        margin: 0.5em 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    var band = {
+      name: "Powerwolf",
+      nationality: "German",
+      genre: "metal",
+      formed: 2003,
+      albums: [
+        {
+          name: "Return in Bloodred",
+          released: 2005,
+        },
+        {
+          name: "Lupus Dei",
+          released: 2007,
+        },
+        {
+          name: "Call of the Wild",
+          released: 2021,
+        },
+        {
+          name: "Wake Up the Wicked",
+          released: 2024,
+        },
+      ],
+    };
+    // Don't edit the code below here!
+    let yearsActive = band.split
+      ? "from " + band.formed + " to " + new Date().getFullYear()
+      : "since " + band.formed;
+
+    let bandInfo =
+      band.name +
+      " is a " +
+      band.nationality +
+      " " +
+      band.genre +
+      " band. They were (still are) active " +
+      yearsActive +
+      ". Their first album, " +
+      band.albums[0].name +
+      ", was released in " +
+      band.albums[0].released +
+      ".";
+
+    const section = document.querySelector("section");
+    let para1 = document.createElement("p");
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+</html>

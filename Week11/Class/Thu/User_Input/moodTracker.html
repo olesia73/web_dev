@@ -1,0 +1,95 @@
+<!-- mood-changer-template.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mood Changer</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 2rem;
+        font-family: sans-serif;
+        background-color: #f0f0f0;
+      }
+      #moodImg {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-top: 1rem;
+      }
+      input,
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mood Changer 😎</h1>
+
+    <input
+      type="number"
+      id="moodInput"
+      min="0"
+      max="4"
+      placeholder="Enter a number (0–4)"
+    />
+    <button id="setMoodBtn">Set Mood</button>
+
+    <h2 id="moodMessage">How are you feeling?</h2>
+    <img id="moodImg" src="Mood_Img/Question.jpg" alt="Mood face" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("setMoodBtn");
+        button.addEventListener("click", changeMood);
+      });
+
+      function changeMood() {
+        // Get input value
+        let input = document.getElementById("moodInput").value;
+        let n = parseInt(input);
+
+        // Get DOM elements
+        const message = document.getElementById("moodMessage");
+        const img = document.getElementById("moodImg");
+
+        // TODO: Replace with real switch logic!
+        switch (n) {
+          case 0:
+            message.textContent = "A bit angry";
+            img.src = "Mood_Img/angry.png";
+            document.body.style.backgroundColor = "maroon";
+            break;
+          case 1:
+            message.textContent = "Like it's the summer break already";
+            document.body.style.backgroundColor = "#ff8989";
+            img.src = "Mood_Img/happy.png";
+            break;
+          case 2:
+            message.textContent = "Poker face emotions";
+            img.src = "Mood_Img/okay.png";
+            document.body.style.backgroundColor = "#35654d";
+            break;
+          case 3:
+            message.textContent = "How do you think I'm feeling? Despondent";
+            img.src = "Mood_Img/sad.png";
+            document.body.style.backgroundColor = "#205781";
+            break;
+          case 4:
+            message.textContent = "Well, you're asking during an 8 a.m. class...";
+            img.src = "Mood_Img/sleepy.png";
+            document.body.style.backgroundColor = "#f6e96b";
+            break;
+
+          // Add other cases here!
+          default:
+            message.textContent = "Please enter a number from 0 to 4!";
+            img.src = "Mood_Img/Question.jpg";
+            document.body.style.backgroundColor = "#f0f0f0";
+        }
+      }
+    </script>
+  </body>
+</html>
