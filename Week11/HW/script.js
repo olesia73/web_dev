@@ -8,7 +8,7 @@ function openImage(index) {
       imageOrNot[index] = !imageOrNot[index];
    }
    else {
-      document.getElementById(String(index)).innerHTML = `<img src="${list[index]}.jpeg" alt="Description of the image" />`;
+      document.getElementById(String(index)).innerHTML = `<img src="cakes/${list[index]}.jpeg" />`;
       imageOrNot[index] = !imageOrNot[index];
    }
 }
