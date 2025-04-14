@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Active Learning: Countdown</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+
+        .a11y-label {
+            margin: 0;
+            text-align: right;
+            font-size: 0.7rem;
+            width: 98%;
+        }
+
+        body {
+            margin: 10px;
+            background: #f5f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="output"></div>
+    <script>
+        const output = document.querySelector('.output');
+        output.textContent = "";
+        let i = 10;
+        for (; i >= 0; i--) {
+            const para = document.createElement('p');
+            switch(i) {
+                case 10:
+                    para.textContent = "Countdown 10";
+                    break;
+                case 0:
+                    para.textContent = "Blast off!";
+                    break;
+                default:
+                    para.textContent = i;
+            }
+            output.appendChild(para);
+        }
+
+    </script>
+</body>
+</html>
