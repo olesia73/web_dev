@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Notes on Loops</title>
+</head>
+<body>
+    <p class="map">If all were Baggings: </p>
+    <p class="filter">The real Baggings: </p>
+    <p class="true">The actual full names are: </p>
+    <script>
+        function makeBaggings(sb) {
+            return sb + ' Baggings';
+        }
+        const hobbits = ['Bilbo', 'Frodo', 'Sam', 'Pippin', 'Merry', 'Lobelia'];
+        const surnames = ['Baggings', 'Baggings', 'Gamgee', 'Took', 'Brandybuck', 'Sackville-Baggings']
+        const para = document.querySelector('.map');
+        for (hobbit of hobbits) {
+            console.log(hobbit);
+        }
+        const baggings = hobbits.map(makeBaggings);
+        para.textContent += baggings.join(' & ');
+
+        param = document.querySelector('.filter');
+        const actualBaggings = hobbits.filter((sb) => {
+            if (sb === 'Bilbo' || sb === 'Frodo') {
+                return true;
+            }
+            return false;
+        });
+        param.textContent += actualBaggings.join(' & ');
+
+        const finpara = document.querySelector('.true');
+        let i = 0;
+        while (i < hobbits.length) {
+            hobbits[i] += ' ' + surnames[i];
+            i++;
+        }
+        finpara.textContent += hobbits.join(' & ');
+    </script>
+</body>
+</html>
