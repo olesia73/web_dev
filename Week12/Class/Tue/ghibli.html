@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Ghibli Film</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #fefae0;
+        text-align: center;
+        padding: 2rem;
+      }
+      #card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <button type="submit" id="filter">Filter: before 2000s</button>
+      <button type="submit" id="new">New film</button>
+      <h1 id="title">Loading...</h1>
+      <img id="image" src="" alt="Film poster" style="display: none" />
+      <h3 id="release"></h3>
+      <p id="description"></p>
+    </div>
+
+    <script>
+      //API = Application Programming Interface
+      let filter2000 = false;
+      async function loadRandomFilm() {
+        const res = await fetch("https://ghibliapi.vercel.app/films");
+        const films = await res.json();
+        let randomFilm = films[Math.floor(Math.random() * films.length)];
+        if (filter2000) {
+          while(parseInt(randomFilm.release_date) >= 2000) {
+            let randomFilm = films[Math.floor(Math.random() * films.length)];
+          }
+        }
+        document.getElementById("title").textContent = randomFilm.title;
+        document.getElementById("description").textContent = randomFilm.description;
+        if (randomFilm.image) {
+          const img = document.getElementById("image");
+          img.src = randomFilm.image;
+          img.style.display = "block";
+        }
+        else {
+          document.getElementById("image").style.display = "none";
+        }
+        document.getElementById("release").textContent = randomFilm.release_date;
+      }
+
+      function filtering() {
+          if (filter2000) {
+            document.getElementById("filter").textContent = "Filter: before 2000s";
+            filter2000 = false;
+          }
+          else {
+            document.getElementById("filter").textContent = "Turn off the filter";
+            filter2000 = true;
+          }
+          console.log(filter2000);
+      }
+      //Button not working
+      const button = document.getElementById("filter");
+      button.addEventListener("click", function() { filtering()} );
+    
+      const button2 = document.getElementById("new");
+      button2.addEventListener("click", function() { loadRandomFilm()} );
+    
+      loadRandomFilm();
+    </script>
+  </body>
+</html>
