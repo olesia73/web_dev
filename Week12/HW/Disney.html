@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disney</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #fefae0;
+        text-align: center;
+        padding: 2rem;
+        background-image: url("Disney.jpeg");
+      }
+      #card {
+        background-image: url("https://wallpapersok.com/images/high/mickey-mouse-disney-blue-aesthetic-xm98arno1874ylf9.webp");
+        border-radius: 1rem;
+        padding: 2rem;
+        min-height: 300px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <button type="submit" id="new">More, I need more Disney characters</button>
+      <h1 id="title">Loading...</h1>
+      <h2 id="from"></h2>
+      <img id="image" src="" alt="Disney character" style="display: none" />
+    </div>
+
+    <script>
+      async function loadCat() {
+          const res = await fetch("https://api.disneyapi.dev/character", {mode: 'cors'});
+          const cats = await res.json();
+          let randomCat = cats['data'][Math.floor(Math.random() * cats['data'].length)];
+          document.getElementById("title").textContent = randomCat.name;
+          if (randomCat.films[0]) {
+            document.getElementById("from").textContent = "From " + randomCat.films[0];
+          }
+          else {
+            document.getElementById("from").textContent = "From Not A Film";
+          }
+          
+          if (randomCat.imageUrl) {
+            const img = document.getElementById("image");
+            img.src = randomCat.imageUrl;
+            img.style.display = "block";
+            console.log(img.src);
+          }
+          else {
+            document.getElementById("image").style.display = "none";
+          }
+       }
+      const button = document.getElementById("new");
+      button.addEventListener("click", function() { loadCat() });
+
+    </script>
+  </body>
+</html>
